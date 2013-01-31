@@ -22,14 +22,24 @@ enum transport_type {
 	USB_GADGET_FSERIAL_TRANSPORT_SMD,
 };
 
-#define GSERIAL_NO_PORTS 2
+enum fserial_func_type {
+	USB_FSER_FUNC_NONE,
+	USB_FSER_FUNC_SERIAL,
+	USB_FSER_FUNC_MODEM,
+	USB_FSER_FUNC_MODEM_MDM,
+	USB_FSER_FUNC_AUTOBOT,
+};
+
+#define GSERIAL_NO_PORTS 5
 struct usb_gadget_fserial_platform_data {
 	enum transport_type	transport[GSERIAL_NO_PORTS];
+	enum fserial_func_type	func_type[GSERIAL_NO_PORTS];
 	unsigned		no_ports;
 };
 
 struct usb_gadget_facm_pdata {
 	enum transport_type	transport[GSERIAL_NO_PORTS];
+	enum fserial_func_type	func_type[GSERIAL_NO_PORTS];
 	unsigned		no_ports;
 };
 #endif

@@ -20,7 +20,6 @@ enum msm_xo_ids {
 	MSM_XO_TCXO_A2,
 	MSM_XO_CORE,
 	MSM_XO_PXO,
-	MSM_XO_CXO,
 	NUM_MSM_XO_IDS
 };
 

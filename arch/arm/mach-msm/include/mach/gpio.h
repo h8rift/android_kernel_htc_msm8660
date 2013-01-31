@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Google, Inc.
- * Copyright (c) 2009-2012, Code Aurora Forum. All rights reserved.
+ * Copyright (c) 2009-2011, Code Aurora Forum. All rights reserved.
  * Author: Mike Lockwood <lockwood@android.com>
  *
  * This software is licensed under the terms of the GNU General Public
@@ -27,6 +27,9 @@
 #define FIRST_BOARD_GPIO	NR_GPIO_IRQS
 
 extern struct irq_chip msm_gpio_irq_extn;
+
+extern void register_gpio_int_mask(unsigned int gpio, unsigned int idle);
+extern void unregister_gpio_int_mask(unsigned int gpio, unsigned int idle);
 
 static inline int gpio_get_value(unsigned gpio)
 {
@@ -199,18 +202,6 @@ enum msm_tlmm_pull_tgt {
 	TLMM_PULL_SDC1_CMD,
 	TLMM_PULL_SDC1_DATA,
 };
-#ifdef CONFIG_SEC_AUDIO_I2S_DRIVING_CURRENT
-enum msm_tlmm_spkr_hdrive_tgt {
-	CODEC_SPKR_SCK_HDRV = 0,
-	CODEC_SPKR_WS_HDRV,
-	CODEC_SPKR_DOUT_HDRV,
-};
-
-enum msm_tlmm_spkr_pull_tgt {
-	CODEC_SPKR_SCK_PULL = 0,
-	CODEC_SPKR_WS_PULL,
-};
-#endif
 
 #ifdef CONFIG_MSM_V2_TLMM
 void msm_tlmm_set_hdrive(enum msm_tlmm_hdrive_tgt tgt, int drv_str);
@@ -249,15 +240,6 @@ static inline int msm_gpio_install_direct_irq(unsigned gpio, unsigned irq,
 	return -ENOSYS;
 }
 #endif
-
-#ifdef CONFIG_SEC_AUDIO_I2S_DRIVING_CURRENT
-void msm_tlmm_set_spkr_hdrive(enum msm_tlmm_spkr_hdrive_tgt tgt, int drv_str);
-void msm_tlmm_set_spkr_pull(enum msm_tlmm_spkr_pull_tgt tgt, int drv_str);
-#endif
-
-#ifdef CONFIG_OF
-int __init msm_gpio_of_init(struct device_node *node,
-			    struct device_node *parent);
-#endif
+int msm_dump_gpios(struct seq_file *m, int curr_len, char *gpio_buffer);
 
 #endif /* __ASM_ARCH_MSM_GPIO_H */

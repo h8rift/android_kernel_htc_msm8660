@@ -266,4 +266,5 @@
 #define INT_ADSP_A11_SMSM               LPASS_SCSS_GP_MEDIUM_IRQ
 #define INT_DSPS_A11                    SPS_MTI_31
 
+#define PM8058_IRQ_BASE				(NR_MSM_IRQS + NR_GPIO_IRQS)
 #endif
