@@ -9,3 +9,4 @@ obj-$(CONFIG_MACH_VILLEC2) += villec2-panel.o
 obj-$(CONFIG_MACH_HOLIDAY) += holiday-panel.o
 obj-$(CONFIG_MACH_VIGOR) += vigor-panel.o
 obj-$(CONFIG_MACH_RUBY) += ruby-panel.o
+# obj-$(CONFIG_MACH_VERDI_LTE) += verdi-panel.o
