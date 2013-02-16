@@ -43,7 +43,6 @@ obj-$(CONFIG_MSM_CPU_AVS) += avs.o
 obj-$(CONFIG_MSM_AVS_HW) += avs_hw.o
 obj-$(CONFIG_CPU_V6) += idle-v6.o
 obj-$(CONFIG_CPU_V7) += idle-v7.o
-obj-$(CONFIG_MSM_JTAG_V7) += jtag-v7.o
 
 msm-etm-objs := cp14.o etm.o
 obj-$(CONFIG_MSM_ETM) += msm-etm.o

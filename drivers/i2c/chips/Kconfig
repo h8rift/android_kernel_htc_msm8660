@@ -85,7 +85,7 @@ config VP_A1026
 
 config VP_A1028
 	tristate "A1028 Voice Processor Driver"
-	depends on I2C=y
+	depends on I2C
 	default n
 	help
 	 A1028 Voice Processor Driver implemented by HTC.

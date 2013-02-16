@@ -77,7 +77,6 @@ obj-$(CONFIG_TOUCHSCREEN_CY8C_TS)	+= cy8c_ts.o
 obj-$(CONFIG_TOUCHSCREEN_CYTTSP_I2C)    += cyttsp-i2c.o
 obj-$(CONFIG_TOUCHSCREEN_CYPRESS_CS)	+= cy8c_cs.o
 obj-$(CONFIG_TOUCHSCREEN_CYPRESS_TMA)	+= cy8c_tma_ts.o
-obj-$(CONFIG_TOUCHSCREEN_NTRIG) 	+= ntrig.o
 obj-$(CONFIG_TOUCHSCREEN_HIMAX)		+= himax8526a.o
 obj-$(CONFIG_TOUCHSCREEN_HIMAX_SH)	+= himax8526a-sh.o
 obj-$(CONFIG_TOUCHSCREEN_HIMAX_SH2)	+= himax8526a-sh2.o
