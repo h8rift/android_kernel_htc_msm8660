@@ -363,8 +363,7 @@ static int32_t qs_s5k4e1_eeprom_i2c_read_b(unsigned short raddr,
 	return rc;
 }
 
-static int32_t qs_s5k4e1_get_calibration_data(
-	struct sensor_3d_cali_data_t *cdata)
+static int32_t qs_s5k4e1_get_calibration_data(struct sensor_3d_cali_data_t *cdata)
 {
 	int32_t rc = 0;
 	cali_data_status = 1;

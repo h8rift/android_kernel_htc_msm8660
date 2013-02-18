@@ -47,6 +47,12 @@ config TOUCHSCREEN_NTRIG
 	help
 	  This is support for N-trig over spi based touchscreens
 
+config TOUCHSCREEN_NTRIG_8x60
+	tristate "N-trig spi touchscreen"
+	depends on SPI_TOUCHSCREEN_NTRIG
+	help
+	  This is support for N-trig over spi based touchscreens
+	  
 config TOUCHSCREEN_ATMEL_224E
 	tristate "Atmel i2c touchscreen"
 	depends on I2C

@@ -36,6 +36,10 @@
 #include <linux/workqueue.h>
 #include <linux/hrtimer.h>
 #include <linux/mutex.h>
+#include <linux/sched.h>
+#include <linux/ioctl.h>
+#include <linux/slab.h>
+#include <linux/tty.h>
 
 #define ESDSEQ	3000
 #define POWERONSEQ 320
